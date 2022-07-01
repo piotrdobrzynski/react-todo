@@ -1,38 +1,147 @@
-.App {
-  text-align: center;
-}
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  background: linear-gradient(to bottom right, #c31432, #240b36);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #333;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+     padding: 10px;
+     width: calc(100% - 20px);
+     min-height: calc(100% - 20px);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .container .add-item {
+     display: grid;
+     grid-template-columns: 70px auto 70px;
+     grid-template-rows: 60px;
+     width: 100%;
+     height: 60px;
+     background: rgba(0, 0, 0, .4);
+     border-radius: 30px;
+     overflow: hidden;
+}
+ .container .add-item .add-icon {
+     grid-column-start: 1;
+     grid-column-end: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #fff;
+     font-size: 2rem;
+     cursor: pointer;
+}
+ .container .add-item input {
+     grid-column-start: 2;
+     grid-column-end: 2;
+     background: none;
+     border: none;
+     width: 100%;
+     height: 60px;
+     color: #fff;
+     font-size: 1.6rem;
+}
+ .container .add-item input::placeholder {
+     color: #fff;
+}
+ .container .add-item input:focus {
+     outline: none;
+}
+ .container .add-item .feature-icon {
+     grid-column-start: 3;
+     grid-column-end: 3;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #fff;
+     font-size: 1.6rem;
+     margin: 0 15px;
+     cursor: pointer;
+}
+ .container .todo-list {
+     padding-top: 40px;
+}
+ .container .todo-list .item {
+     display: grid;
+     grid-template-columns: 70px auto 70px;
+     grid-template-rows: 60px;
+     width: 100%;
+     height: 60px;
+     margin-bottom: 10px;
+     background: rgba(255, 255, 255, .8);
+     border-radius: 30px;
+     overflow: hidden;
+     opacity: 0;
+     transition: all 0.5s linear;
+}
+ .container .todo-list .item .item-checkbox {
+     grid-column-start: 1;
+     grid-column-end: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1.6rem;
+     color: #c31432;
+     cursor: pointer;
+}
+ .container .todo-list .item .item-title {
+     grid-column-start: 2;
+     grid-column-end: 2;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     font-size: 1.6rem;
+}
+ .container .todo-list .item .feature-icon {
+     grid-column-start: 3;
+     grid-column-end: 3;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #333;
+     font-size: 1.6rem;
+     margin: 0 15px;
+     cursor: pointer;
+}
+ .container .todo-list .show {
+     opacity: 1;
+}
+ .container .complete-list .item {
+     position: relative;
+     background: rgba(255, 255, 255, .3);
+}
+ .container .complete-list .item::before {
+     content: '';
+     position: absolute;
+     top: 30px;
+     width: calc(100% - 120px);
+     margin: 0 60px;
+     border-bottom: 2px solid #555;
+}
+ .container .show-completed {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 20px;
+}
+ .container .show-completed .button {
+     color: #fff;
+     padding: 10px;
+     font-size: 1.3rem;
+     text-transform: uppercase;
+     background: #f2b400;
+     border-radius: 30px;
+     overflow: hidden;
+     cursor: pointer;
+}
+ .container .gold-bg {
+     color: #f2b400 !important;
 }
